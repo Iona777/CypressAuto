@@ -1,0 +1,26 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:headedRun": "cypress run --spec cypress\\integration\\examples\\Test1.js",
+    "cy:chromeRun": "cypress run --browser chrome",
+    "cy:browserRun": "cypress run --browser",
+    "cy:recordTests": "cypress run --record --key c752c1c8-4099-4ac6-af5c-1cb48a404be1 --spec cypress\\integration\\examples\\Test1.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.2",
+    "cypress-iframe": "^1.0.1"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@cypress/browserify-preprocessor": "latest",
+    "cypress": "latest"
+  }
+}
