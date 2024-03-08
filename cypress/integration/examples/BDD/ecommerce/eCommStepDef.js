@@ -1,4 +1,10 @@
-import { Given,When, Then, And } from "@cucumber/cucumber";
+//import {func1, func2} from "library";
+//becomes
+//const {func1, func2} = require("library");
+
+const {Given,When, Then, And} = require("@cucumber/cucumber") ;
+//import { Given,When, Then, And } from "@cucumber/cucumber";
+
 //import { Given,When, Then } from "@cypress-cucumber-preprocessor/steps";
 
 const homePage = new HomePage()
