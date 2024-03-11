@@ -96,10 +96,10 @@ Then('select the country submit and verify Thank You message', function()
 
 })
 
-When('I fill the form details', function()
+When('I fill the form details', function(dataTable)
 {
-    homePage.getEditBox().type(this.data.name)
-    homePage.getGender().select(this.data.gender)
+    homePage.getEditBox().type(dataTable.rawTable[1][0])
+    homePage.getGender().select(dataTable.rawTable[1][1])
 })
 
 
