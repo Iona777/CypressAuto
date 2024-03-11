@@ -2,10 +2,16 @@
 //becomes
 //const {func1, func2} = require("library");
 
-const {Given,When, Then, And} = require("@cucumber/cucumber") ;
+//const {Given,When, Then, And} = require("@cucumber/cucumber") ;
+const {Given, When, Then } = require("@badeball/cypress-cucumber-preprocessor");
 //import { Given,When, Then, And } from "@cucumber/cucumber";
 
 //import { Given,When, Then } from "@cypress-cucumber-preprocessor/steps";
+
+
+const HomePage = require("../../../pageObjects/HomePage");
+const ProductPage = require("../../../pageObjects/ProductPage");
+const And = Then
 
 const homePage = new HomePage()
 const productPage = new ProductPage()       
