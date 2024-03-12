@@ -84,7 +84,10 @@ describe('My Second Test Suite', function()
 
         productPage.getCheckoutButton().click()
         var sum = 0 
+        cy.pause()
 
+
+        
         //don't need index and list variables in the loop if not using them
         cy.get('tr td:nth-child(4) strong').each((el) => {
 

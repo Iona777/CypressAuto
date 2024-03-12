@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:headedRun": "cypress run --spec cypress\\integration\\examples\\Test1.js",
+    "cy:headedRun": "cypress run --spec cypress\\integration\\examples\\Test8Framework.js",
+    "cy:runFeatures": "cypress run --spec cypress\\integration\\examples\\BDD\\ecommerce.feature --headed -- browser chrome",
     "cy:chromeRun": "cypress run --browser chrome",
     "cy:browserRun": "cypress run --browser",
     "cy:recordTests": "cypress run --record --key c752c1c8-4099-4ac6-af5c-1cb48a404be1 --spec cypress\\integration\\examples\\Test1.js"

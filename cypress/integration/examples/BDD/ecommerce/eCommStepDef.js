@@ -19,25 +19,62 @@ const productPage = new ProductPage()
 
 Given('I open Ecommerce page', function()
 {
+    
     cy.visit(Cypress.env('url')+"/angularpractice/")
 })
 
-When('I add items to Cart', ()=>
-{
+
+When('I add items to Cart', function(){
+
+     cy.log("ADDING ITEMS TO CART")
+     
     homePage.getShopTab().click()
 
     //Read in data from array in examples.json.
     //Select each product in the array
-    this.data.productName.forEach(element => {
-        cy.selectProduct(element)    
-    });
+     this.data.productName.forEach(function(element) 
+     {
+         cy.selectProduct(element)
 
+     })
+
+    
     productPage.getCheckoutButton().click()
 
 })
 
+
+// When('I add items to Cart', function()
+// {
+//     cy.log("ADDING ITEMS TO CART")
+//     homePage.getShopTab().click()
+//     //cy.log("NAME IS "+ this.data.name)
+//     cy.log("NAME IS "+ data.name)
+    
+//     cy.pause()
+//     //Read in data from array in examples.json.
+//     //Select each product in the array
+
+//     // this.data.productName.forEach(function(element) {
+     
+//     //     cy.selectProduct(element)
+//     //   });
+//     //   productPage.checkOutButton().click()
+
+    
+//     cy.pause()
+
+//     homePage.getShopTab().click()
+
+
+
+// })
+
 And('validate the total prices', function()
 {
+
+    Cypress.config('defaultCommandTimeout',8000)
+    
 
     //CONSISER PUTTING AS MUCH OF THIS AS I CAN INTO A PAGE OBJECT METHOD(S)
     var sum = 0 
@@ -105,6 +142,9 @@ When('I fill the form details', function(dataTable)
 
 Then('validate the form behaviour', function()
 {
+    cy.log("NAME IS "+ this.data.name)
+    cy.pause()
+
     homePage.getTwoDataBinding().should('have.value', this.data.name)
     homePage.getEditBox().should('have.attr', 'minlength',2)
     homePage.getEntrepreneur().should('be.disabled')
